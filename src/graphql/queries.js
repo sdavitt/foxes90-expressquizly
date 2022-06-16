@@ -11,6 +11,15 @@ const users = {
     }
 }
 
+// all quizzes
+const quizzes = {
+    type: new GraphQLList(QuizType),
+    description: 'Query all quizzes in our db',
+    resolve(parent,args){
+        return Quiz.find()
+    }
+}
+
 // get a specific user by their id
 const user = {
     type: UserType,
@@ -47,4 +56,4 @@ const submissionById = {
     }
 }
 
-module.exports = { users, user, quizBySlug, submissionById }
+module.exports = { users, user, quizBySlug, submissionById, quizzes }

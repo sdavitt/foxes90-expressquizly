@@ -1,0 +1,19 @@
+<!-- tied to the results route -->
+<!-- potential next level functionality: question-by-question breakdown -->
+<%- include('../partials/header-dark.ejs') %>
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h1>Quiz Complete!</h1>
+                    <p><strong>You've submitted:</strong> <%= submission.quiz.title %></p>
+                    <p><strong>Your score:</strong> <%= submission.score %></p>
+                    <a class="btn btn-info" href="/">Dashboard...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer.ejs') %>

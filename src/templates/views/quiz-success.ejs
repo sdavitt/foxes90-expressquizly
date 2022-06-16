@@ -1,0 +1,26 @@
+<!-- tied to the created route -->
+<%- include('../partials/header-dark.ejs') %>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1>Quiz Created!</h1>
+                        <p><strong>URL endpoint for this quiz:</strong>
+                            <%= slug %>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a class="btn btn-info" href="/quiz/<%= slug %>">View new quiz...</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-info" href="/">Dashboard...</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
