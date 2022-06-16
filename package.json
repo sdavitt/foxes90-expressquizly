@@ -1,0 +1,23 @@
+{
+  "name": "foxes90-quizly",
+  "version": "1.0.0",
+  "description": "A quiz application application for the Foxes90 cohort.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Sam Davitt",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.3.8"
+  }
+}
