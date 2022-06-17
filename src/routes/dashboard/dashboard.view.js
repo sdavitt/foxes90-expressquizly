@@ -1,17 +1,23 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-    /* const quizzesData = []
-    const query = `{
+    const query = `query quizzes{
         quizzes {
               id,
               slug,
+              title,
               description,
-              avgScore
+              avgScore,
+              submissions {
+                  id
+              },
+              user {
+                  username
               }
-    }`
+            }
+        }`
     try {
-        const { data } = await axios.get(process.env.GRAPHQL_ENDPOINT, {
+        const { data } = await axios.post(process.env.GRAPHQL_ENDPOINT, {
             query: query,
             variables: {}
         }, {
@@ -19,10 +25,11 @@ module.exports = async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
-        console.log(data.data.quizzes); */
-        res.render('dashboard', { user: req.verifiedUser.user });
-/*     } catch (e) {
+        console.log(data.data.quizzes);
+        res.render('dashboard', { user: req.verifiedUser.user, quizzes: data.data.quizzes });
+    } catch (e) {
         console.log(e.response.data.errors);
+        console.log(e.response.data.errors[0].locations);
         res.redirect('/auth/login');
-    } */
+    }
 }

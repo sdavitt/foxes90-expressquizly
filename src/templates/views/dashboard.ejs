@@ -13,12 +13,13 @@
             <thead>
                 <tr>
                     <th scope="col">Title</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Submissions</th>
                     <th scope="col">Avg. Score</th>
                 </tr>
             </thead>
             <tbody>
-                <% for (const quiz of user.quizzes) { %>
+                <% for (const quiz of quizzes) { %>
                     <tr>
                         <td>
                             <a href="/quiz/<%= quiz.slug %>"><strong>
@@ -28,6 +29,9 @@
                             <small>
                                 <%= quiz.description %>
                             </small>
+                        </td>
+                        <td>
+                            <strong><%= quiz.user.username %></strong>
                         </td>
                         <td>
                             <%= quiz.submissions.length %>
